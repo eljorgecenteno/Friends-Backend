@@ -20,20 +20,21 @@ const personSchema = new Schema({
   },
   interest: {
     type: [String],
-    enum: ['Chess', 'Cinema', 'Poker', 'Theater', 'Party', 'Restaurants', 'Hiking', 'Football', 'Movie Night', 'Running', 'Language exchange', 'Trips', 'Basketball', 'Literature'],
+    enum: ["Chess", "Cinema", "Poker", "Theater", "Party", "Restaurants", "Hiking", "Football", "Movie Night", "Running", "Language exchange", "Trips", "Basketball", "Literature"],
     required: true,
-}, 
-motto: {
+  },
+  motto: {
     type: String,
     minLength: 5,
-    maxLength: 100
-},
-city: {
+    maxLength: 100,
+  },
+  events: [{ type: Schema.Types.ObjectId, ref: "Event" }],
+  city: {
     type: String,
-    enum: ['London', 'Paris', 'Madrid', 'Berlin', 'Athens' ]}   
-  
+    enum: ["London", "Paris", "Madrid", "Berlin", "Athens"],
+  },
 });
 
-const Person = model('Person', personSchema)
+const Person = model("Person", personSchema);
 
-module.exports = Person
+module.exports = Person;
