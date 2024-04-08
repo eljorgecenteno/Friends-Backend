@@ -14,6 +14,6 @@ const opinionSchema = new Schema({
   event: { type: Schema.Types.ObjectId, ref: "Event" }
 });
 
-const Opinion = model("Event", opinionSchema);
+const Opinion = model("Opinion", opinionSchema);
 
 module.exports = Opinion;

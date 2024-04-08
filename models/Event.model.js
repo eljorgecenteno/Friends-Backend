@@ -10,7 +10,6 @@ const eventSchema = new Schema({
   profile_image_url: {
     type: String,
     default: "https://www.shutterstock.com/image-vector/upcoming-events-isolated-on-white-260nw-1538520572.jpg",
-    required: true,
   },
   interest: {
     type: [String],
@@ -24,17 +23,18 @@ const eventSchema = new Schema({
  },
   date: {
     type: Date,
-    require: true
+    required: true,
   },
   opinions: {
     type: [{type: Schema.Types.ObjectId, ref: 'Opinion'}]
   },
 city: {
     type: String,
-    enum: ['London', 'Paris', 'Madrid', 'Berlin', 'Athens' ]}   
-  
+    enum: ['London', 'Paris', 'Madrid', 'Berlin', 'Athens' ] ,
+    required: true}   
+    
 });
 
-const Event = model('Event', personSchema)
+const Event = model('Event', eventSchema)
 
 module.exports = Event
