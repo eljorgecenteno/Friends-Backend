@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const Event = require("../models/Event.model")
+const mongoose = require("mongoose");
+
 router.post("/persons", (req, res, next) => {
     const { name, age, profile_image_url, interest, motto, city } = req.body;
   
