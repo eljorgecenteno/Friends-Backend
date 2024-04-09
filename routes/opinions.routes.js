@@ -20,7 +20,8 @@ router.post("/opinions", (req, res, next) => {
 //  GET /api/projects -  Retrieves all of the persons
 router.get("/opinions", (req, res, next) => {
   Opinion.find()
-    //.populate("events")
+    //.populate("person")
+    //.populate('event')
     .then((allOpinions) => res.json(allOpinions))
     .catch((err) => res.json(err));
 });

@@ -1,0 +1,98 @@
+[
+    {
+        "name": "John",
+        "age": 25,
+        "profile_image_url": "https://example.com/profile1.jpg",
+        "interest": ["Chess", "Cinema", "Football"],
+        "motto": "Live and let live",
+        "events": [],
+        "city": "London"
+      },
+      {
+        "name": "Alice",
+        "age": 30,
+        "profile_image_url": "https://example.com/profile2.jpg",
+        "interest": ["Running", "Hiking", "Movie Night"],
+        "motto": "Carpe Diem",
+        "events": [],
+        "city": "Paris"
+      },
+      {
+        "name": "David",
+        "age": 22,
+        "profile_image_url": "https://example.com/profile3.jpg",
+        "interest": ["Theater", "Language exchange", "Trips"],
+        "motto": "Dream big, work hard",
+        "events": [],
+        "city": "Madrid"
+      },
+      {
+        "name": "Emily",
+        "age": 35,
+        "profile_image_url": "https://example.com/profile4.jpg",
+        "interest": ["Restaurants", "Party", "Basketball"],
+        "motto": "Stay positive, work hard, make it happen",
+        "events": [],
+        "city": "Berlin"
+      },
+      {
+        "name": "Michael",
+        "age": 28,
+        "profile_image_url": "https://example.com/profile5.jpg",
+        "interest": ["Poker", "Cinema", "Running"],
+        "motto": "Believe you can and you're halfway there",
+        "events": [],
+        "city": "Athens"
+      },
+      {
+        "name": "Sophia",
+        "age": 40,
+        "profile_image_url": "https://example.com/profile6.jpg",
+        "interest": ["Literature", "Chess", "Hiking"],
+        "motto": "Every moment is a fresh beginning",
+        "events": [],
+        "city": "London"
+      },
+      {
+        "name": "Daniel",
+        "age": 20,
+        "profile_image_url": "https://example.com/profile7.jpg",
+        "interest": ["Football", "Party", "Language exchange"],
+        "motto": "The only way to do great work is to love what you do",
+        "events": [],
+        "city": "Paris"
+      },
+      {
+        "name": "Olivia",
+        "age": 26,
+        "profile_image_url": "https://example.com/profile8.jpg",
+        "interest": ["Movie Night", "Basketball", "Trips"],
+        "motto": "In the middle of difficulty lies opportunity",
+        "events": [],
+        "city": "Madrid"
+      },
+      {
+        "name": "William",
+        "age": 32,
+        "profile_image_url": "https://example.com/profile9.jpg",
+        "interest": ["Running", "Cinema", "Restaurants"],
+        "motto": "Strive not to be a success, but rather to be of value",
+        "events": [],
+        "city": "Berlin"
+      },
+      {
+        "name": "Ava",
+        "age": 23,
+        "profile_image_url": "https://example.com/profile10.jpg",
+        "interest": ["Chess", "Hiking", "Movie Night"],
+        "motto": "You miss 100% of the shots you don't take",
+        "events": [],
+        "city": "Athens"
+      }
+]
+        
+      
+
+          
+
+
