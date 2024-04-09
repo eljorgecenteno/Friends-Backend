@@ -1,41 +1,34 @@
 const express = require("express");
 const router = express.Router();
-const Event = require("../models/Event.model")
+const Meetup = require('../models/Meetup.model')
 const mongoose = require("mongoose");
 
-router.post("/persons", (req, res, next) => {
-    const { name, age, profile_image_url, interest, motto, city } = req.body;
   
-    Person.create({ name, age, profile_image_url, interest, motto, city, events: [] })
-      .then((response) => res.status(200).json(response))
-      .catch((err) => res.json(err));
-  });
-  
-  router.get("/events", (req, res) =>{
-    Event.find()
+  router.get("/meetups", (req, res) =>{
+    Meetup.find()
     .populate("opinions")
-    .then((allEvents) =>{
-      res.status(200).json(allEvents)
+    .then((allMeetups) =>{
+      res.status(200).json(allMeetups)
     })
     .catch((err)=>{
       console.log(err)
-      res.status(500).json({message: "Error while getting all the events"})  
+      res.status(500).json({message: err})  
     })
   })
   
-  router.get("/events/:id", (req, res) =>{
-    Event.findById(req.params.id)
+  router.get("/meetups/:id", (req, res) =>{
+    Meetup.findById(req.params.id)
     .populate("opinions")
-    .then((event) =>{
-        res.status(201).json(event)
+    .then((Meetup) =>{
+        res.status(201).json(Meetup)
     })
     .catch((err)=>{
-        res.status(500).json({message: "Error while getting this event"})
+        res.status(500).json({message: "Error while getting this Meetup"})
     })
   })
   
-  router.post("/events", (req, res) =>{
-    Event.create({
+  router.post("/meetups", (req, res) =>{
+    Meetup.create({
       name: req.body.name,
       profile_image_url: req.body.profile_image_url,
       interest: req.body.interest, 
@@ -43,27 +36,27 @@ router.post("/persons", (req, res, next) => {
       date: req.body.date,
       city: req.body.city,
     })
-    .then((createdEvent) => {
-      res.status(201).json(createdEvent);
+    .then((createdMeetup) => {
+      res.status(201).json(createdMeetup);
   })
   .catch((err)=>{
     console.log(err)
   })
   })
   
-  router.put("/events/:id" , (req, res) =>{
-    Event.findByIdAndUpdate(req.params.id, req.body, {new:true})
+  router.put("/meetups/:id" , (req, res) =>{
+    Meetup.findByIdAndUpdate(req.params.id, req.body, {new:true})
     .populate("opinions")
-    .then((eventUpdated) =>{
-        res.status(201).json(eventUpdated)
+    .then((MeetupUpdated) =>{
+        res.status(201).json(MeetupUpdated)
     })
     .catch((err)=>{
-        res.status(500).json({message: "Error while upddating this event"})
+        res.status(500).json({message: "Error while upddating this Meetup"})
     })
     })
   
-    router.delete("/events/:id", (req,res) =>{
-      Event.findByIdAndDelete(req.params.id)
+    router.delete("/meetups/:id", (req,res) =>{
+      Meetup.findByIdAndDelete(req.params.id)
       .then(() =>{
           res.status(204).send()
       })
