@@ -26,7 +26,7 @@ const eventSchema = new mongoose.Schema({
     },
     date: {
       type: Date,
-      require: true,
+      required: true,
     },
     opinions: {
       type: [{ type: mongoose.Schema.Types.ObjectId, ref: "Opinion" }],
@@ -37,9 +37,11 @@ const eventSchema = new mongoose.Schema({
     city: {
       type: String,
       enum: ["London", "Paris", "Madrid", "Berlin", "Athens"],
+      required: true, 
     },
   });
 
+  
 
   const Meetup =  mongoose.model('Meetup',eventSchema)
 

@@ -9,19 +9,16 @@ router.post("/opinions", (req, res, next) => {
   const { description, date, personId, eventId } = req.body;
 
   Opinion.create({ description, date, person: personId, event: eventId })
-    .then((newOpinion) => {
-      return Opinion.findByIdAndUpdate(opinionId, {
-        $push: { opinions: newOpinion._id },
-      });
-    })
+  .populate(person)
+  .populate(event)
     .then((response) => res.json(response))
     .catch((err) => res.json(err));
 });
 //  GET /api/projects -  Retrieves all of the persons
 router.get("/opinions", (req, res, next) => {
   Opinion.find()
-    //.populate("person")
-    //.populate('event')
+    .populate("person")
+    .populate('event')
     .then((allOpinions) => res.json(allOpinions))
     .catch((err) => res.json(err));
 });
@@ -43,7 +40,7 @@ router.get("/opinions/:opinionId", (req, res, next) => {
 });
 
 // PUT  /api/tasks/:taskId  - Updates a specific opinion by id
-router.put("/opinion/:opinionId", (req, res, next) => {
+router.put("/opinions/:opinionId", (req, res, next) => {
   const { opinionId } = req.params;
 
   if (!mongoose.Types.ObjectId.isValid(opinionId)) {
@@ -65,8 +62,8 @@ router.delete("/opinions/:opinionId", (req, res, next) => {
     return;
   }
 
-  Opinion.findByIdAndRemove(opinionId)
-    .then(() => res.json({ message: `Task with ${opinionId} is removed successfully.` }))
+  Opinion.findByIdAndDelete(opinionId)
+    .then(() => res.json({ message: `Opinion was removed successfully.` }))
     .catch((error) => res.json(error));
 });
 
