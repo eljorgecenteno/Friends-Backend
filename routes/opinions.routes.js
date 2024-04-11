@@ -66,7 +66,7 @@ router.delete("/opinions/:opinionId", (req, res, next) => {
   }
 
   Opinion.findByIdAndRemove(opinionId)
-    .then(() => res.json({ message: `Task with ${opinionId} is removed successfully.` }))
+    .then(() => res.json({ message: `Opinion with ${opinionId} is removed successfully.` }))
     .catch((error) => res.json(error));
 });
 

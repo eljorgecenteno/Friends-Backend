@@ -2,7 +2,7 @@
     {
         "name": "John",
         "age": 25,
-        "profile_image_url": "https://example.com/profile1.jpg",
+        "profile_image_url": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "interest": ["Chess", "Cinema", "Football"],
         "motto": "Live and let live",
         "events": [],

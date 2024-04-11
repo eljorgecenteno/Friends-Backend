@@ -15,9 +15,13 @@ router.post("/persons", (req, res, next) => {
 
 //  GET /api/projects -  Retrieves all of the persons
 router.get("/persons", (req, res, next) => {
+  console.log("persons route");
   Person.find()
     //.populate("events")
-    .then((allPersons) => res.status(200).json(allPersons))
+    .then((allPersons) => {
+      console.log(allPersons);
+      res.status(200).json(allPersons);
+    })
     .catch((err) => res.json(err));
 });
 
@@ -38,34 +42,34 @@ router.get("/persons/:personId", (req, res, next) => {
 
 // PUT  /api/projects/:projectId  -  Updates a specific project by id
 router.put("/person/:personId", (req, res, next) => {
-    const { personId } = req.params;
-  
-    if (!mongoose.Types.ObjectId.isValid(personId)) {
-      res.status(400).json({ message: "Specified id is not valid" });
-      return;
-    }
-  
-    Person.findByIdAndUpdate(personId, req.body, { new: true })
-      .then((updatedPerson) => res.json(updatedPerson))
-      .catch((error) => res.json(error));
-  });
+  const { personId } = req.params;
 
-  // DELETE  /api/projects/:projectId  -  Deletes a specific project by id
+  if (!mongoose.Types.ObjectId.isValid(personId)) {
+    res.status(400).json({ message: "Specified id is not valid" });
+    return;
+  }
+
+  Person.findByIdAndUpdate(personId, req.body, { new: true })
+    .then((updatedPerson) => res.json(updatedPerson))
+    .catch((error) => res.json(error));
+});
+
+// DELETE  /api/projects/:projectId  -  Deletes a specific project by id
 router.delete("/persons/:personId", (req, res, next) => {
-    const { personId } = req.params;
-  
-    if (!mongoose.Types.ObjectId.isValid(personId)) {
-      res.status(400).json({ message: "Specified id is not valid" });
-      return;
-    }
-  
-    Person.findByIdAndRemove(personId)
-      .then(() =>
-        res.json({
-          message: `Person with ${personId} is removed successfully.`,
-        })
-      )
-      .catch((error) => res.json(error));
-  });
-  
-  module.exports = router;
+  const { personId } = req.params;
+
+  if (!mongoose.Types.ObjectId.isValid(personId)) {
+    res.status(400).json({ message: "Specified id is not valid" });
+    return;
+  }
+
+  Person.findByIdAndRemove(personId)
+    .then(() =>
+      res.json({
+        message: `Person with ${personId} is removed successfully.`,
+      })
+    )
+    .catch((error) => res.json(error));
+});
+
+module.exports = router;

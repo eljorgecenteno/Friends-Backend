@@ -15,7 +15,7 @@ const personSchema = new Schema({
   },
   profile_image_url: {
     type: String,
-    default: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"    
+    default: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
   },
   interest: {
     type: [String],
@@ -34,6 +34,6 @@ const personSchema = new Schema({
   },
 });
 
-const Person = model("Person", personSchema);
+const Person = model("Person", personSchema, "persons");
 
 module.exports = Person;
