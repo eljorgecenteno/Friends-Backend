@@ -21,11 +21,13 @@ const personSchema = new Schema({
     type: [String],
     enum: ["Chess", "Cinema", "Poker", "Theater", "Party", "Restaurants", "Hiking", "Football", "Movie Night", "Running", "Language exchange", "Trips", "Basketball", "Literature"],
     required: true,
+    minLength: 2,
   },
   motto: {
     type: String,
-    minLength: 5,
-    maxLength: 100,
+    minLength: 25,
+    maxLength: 150,
+    required: true, 
   },
   events: [{ type: Schema.Types.ObjectId, ref: "Meetup" }],
   city: {
