@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 
 const Person = require("../models/Person.model");
 
+const fileUploader = require("../config/cloudinary.config");
+
 //  POST /api/projects  -  Creates a new person, and when creating has no events attended yet
 router.post("/persons", (req, res, next) => {
   const { name, age, profile_image_url, interest, motto, city } = req.body;
@@ -70,6 +72,17 @@ router.delete("/persons/:personId", (req, res, next) => {
       })
     )
     .catch((error) => res.json(error));
+});
+
+router.post("/upload", fileUploader.single("imageUrl"), (req, res, next) => {
+  // console.log("file is: ", req.file)
+  if (!req.file) {
+    next(new Error("No file uploaded!"));
+    return;
+  }
+  // Get the URL of the uploaded file and send it as a response.
+  // 'fileUrl' can be any name, just make sure you remember to use the same when accessing it on the frontend
+  res.json({ fileUrl: req.file.path });
 });
 
 module.exports = router;

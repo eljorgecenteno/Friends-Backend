@@ -19,7 +19,7 @@ const personSchema = new Schema({
   },
   interest: {
     type: [String],
-    enum: ["Chess", "Cinema", "Poker", "Theater", "Party", "Restaurants", "Hiking", "Football", "Movie Night", "Running", "Language exchange", "Trips", "Basketball", "Literature"],
+    enum: ["Chess", "Cinema", "Poker", "Theater", "Party", "Restaurants", "Hiking", "Football", "Movie Night", "Running", "Language Exchange", "Trips", "Basketball", "Literature"],
     required: true,
   },
   motto: {
