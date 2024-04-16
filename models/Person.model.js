@@ -5,7 +5,7 @@ const personSchema = new Schema({
     type: String,
     required: true,
     minLength: 2,
-    maxLength: 20,
+    maxLength: 30,
   },
   age: {
     type: Number,
@@ -21,17 +21,25 @@ const personSchema = new Schema({
     type: [String],
     enum: ["Chess", "Cinema", "Poker", "Theater", "Party", "Restaurants", "Hiking", "Football", "Movie Night", "Running", "Language Exchange", "Trips", "Basketball", "Literature"],
     required: true,
+    minLength: 2,
   },
   motto: {
     type: String,
-    minLength: 5,
+    minLength: 25,
     maxLength: 100,
+    required: true, 
   },
-  events: [{ type: Schema.Types.ObjectId, ref: "Event" }],
+  events: [{ type: Schema.Types.ObjectId, ref: "Meetup" }],
   city: {
     type: String,
     enum: ["London", "Paris", "Madrid", "Berlin", "Athens"],
+    required: true, 
   },
+ email:{
+  type: String, 
+  required: true, 
+  unique: true
+ }
 });
 
 const Person = model("Person", personSchema, "persons");

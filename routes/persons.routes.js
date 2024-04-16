@@ -8,9 +8,9 @@ const fileUploader = require("../config/cloudinary.config");
 
 //  POST /api/projects  -  Creates a new person, and when creating has no events attended yet
 router.post("/persons", (req, res, next) => {
-  const { name, age, profile_image_url, interest, motto, city } = req.body;
+  const { name, age, profile_image_url, interest, motto, city, email } = req.body;
 
-  Person.create({ name, age, profile_image_url, interest, motto, city, events: [] })
+  Person.create({ name, age, profile_image_url, interest, motto, city, email, events: [] })
     .then((response) => res.status(200).json(response))
     .catch((err) => res.json(err));
 });
@@ -19,11 +19,8 @@ router.post("/persons", (req, res, next) => {
 router.get("/persons", (req, res, next) => {
   console.log("persons route");
   Person.find()
-    //.populate("events")
-    .then((allPersons) => {
-      console.log(allPersons);
-      res.status(200).json(allPersons);
-    })
+    .populate("events")
+    .then((allPersons) => res.status(200).json(allPersons))
     .catch((err) => res.json(err));
 });
 
@@ -35,7 +32,7 @@ router.get("/persons/:personId", (req, res, next) => {
     res.status(400).json({ message: "Specified id is not valid" });
     return;
   }
-
+  console.log(personId)
   Person.findById(personId)
     .populate("events")
     .then((person) => res.status(200).json(person))
@@ -43,18 +40,19 @@ router.get("/persons/:personId", (req, res, next) => {
 });
 
 // PUT  /api/projects/:projectId  -  Updates a specific project by id
-router.put("/person/:personId", (req, res, next) => {
-  const { personId } = req.params;
+router.put("/persons/:personId", (req, res, next) => {
+    const { personId } = req.params;
+  
+    if (!mongoose.Types.ObjectId.isValid(personId)) {
+      res.status(400).json({ message: "Specified id is not valid" });
+      return;
+    }
+  
+    Person.findByIdAndUpdate(personId, req.body, { new: true })
+      .then((updatedPerson) => res.json(updatedPerson))
+      .catch((error) => res.json(error));
+  });  
 
-  if (!mongoose.Types.ObjectId.isValid(personId)) {
-    res.status(400).json({ message: "Specified id is not valid" });
-    return;
-  }
-
-  Person.findByIdAndUpdate(personId, req.body, { new: true })
-    .then((updatedPerson) => res.json(updatedPerson))
-    .catch((error) => res.json(error));
-});
 
 // DELETE  /api/projects/:projectId  -  Deletes a specific project by id
 router.delete("/persons/:personId", (req, res, next) => {
