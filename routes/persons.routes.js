@@ -6,9 +6,9 @@ const Person = require("../models/Person.model");
 
 //  POST /api/projects  -  Creates a new person, and when creating has no events attended yet
 router.post("/persons", (req, res, next) => {
-  const { name, age, profile_image_url, interest, motto, city } = req.body;
+  const { name, age, profile_image_url, interest, motto, city, email } = req.body;
 
-  Person.create({ name, age, profile_image_url, interest, motto, city, events: [] })
+  Person.create({ name, age, profile_image_url, interest, motto, city, email, events: [] })
     .then((response) => res.status(200).json(response))
     .catch((err) => res.json(err));
 });

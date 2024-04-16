@@ -5,7 +5,7 @@ const personSchema = new Schema({
     type: String,
     required: true,
     minLength: 2,
-    maxLength: 20,
+    maxLength: 30,
   },
   age: {
     type: Number,
@@ -26,7 +26,7 @@ const personSchema = new Schema({
   motto: {
     type: String,
     minLength: 25,
-    maxLength: 150,
+    maxLength: 100,
     required: true, 
   },
   events: [{ type: Schema.Types.ObjectId, ref: "Meetup" }],
@@ -35,6 +35,11 @@ const personSchema = new Schema({
     enum: ["London", "Paris", "Madrid", "Berlin", "Athens"],
     required: true, 
   },
+ email:{
+  type: String, 
+  required: true, 
+  unique: true
+ }
 });
 
 const Person = model("Person", personSchema);
