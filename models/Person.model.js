@@ -21,9 +21,9 @@ const personSchema = new Schema({
     type: [String],
     enum: ["Chess", "Cinema", "Poker", "Theater", "Party", "Restaurants", "Hiking", "Football", "Movie Night", "Running", "Language exchange", "Trips", "Basketball", "Literature"],
     required: true,
-    minLength: 2,
+    
   },
-  motto: {
+  description {
     type: String,
     minLength: 25,
     maxLength: 100,
@@ -39,7 +39,15 @@ const personSchema = new Schema({
   type: String, 
   required: true, 
   unique: true
- }
+ },
+ password: {
+  type: String,
+  required: true,
+},
+isAdmin:{
+  type:Boolean, 
+  default: false,
+}
 });
 
 const Person = model("Person", personSchema);

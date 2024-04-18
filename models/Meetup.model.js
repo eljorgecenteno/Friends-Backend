@@ -15,9 +15,15 @@ const eventSchema = new mongoose.Schema({
       required: true,
     },
     interest: {
-      type: [String],
+      type: String,
       enum: ["Chess", "Cinema", "Poker", "Theater", "Party", "Restaurants", "Hiking", "Football", "Movie Night", "Running", "Language exchange", "Trips", "Basketball", "Literature"],
       required: true,
+      validate: {
+        validator: function(v) {
+          return v.length <= 4;
+        },
+        message:` You can only choose 4 interest as maximal`
+      }
     },
     description: {
       type: String,
@@ -25,7 +31,7 @@ const eventSchema = new mongoose.Schema({
       maxLength: 100,
     },
     date: {
-      type: Date,
+      type: Object,
       required: true,
     },
     opinions: {

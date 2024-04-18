@@ -8,7 +8,7 @@ const Person = require("../models/Person.model");
 router.post("/persons", (req, res, next) => {
   const { name, age, profile_image_url, interest, motto, city, email } = req.body;
 
-  Person.create({ name, age, profile_image_url, interest, motto, city, email, events: [] })
+  Person.create({ name, age, profile_image_url, interest, description, city, email,password, events: [] })
     .then((response) => res.status(200).json(response))
     .catch((err) => res.json(err));
 });
