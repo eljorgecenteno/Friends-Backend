@@ -15,11 +15,11 @@ const personSchema = new Schema({
   },
   profile_image_url: {
     type: String,
-    default: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"    
+    default: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
   },
   interest: {
     type: [String],
-    enum: ["Chess", "Cinema", "Poker", "Theater", "Party", "Restaurants", "Hiking", "Football", "Movie Night", "Running", "Language exchange", "Trips", "Basketball", "Literature"],
+    enum: ["Chess", "Cinema", "Poker", "Theater", "Party", "Restaurants", "Hiking", "Football", "Movie Night", "Running", "Language Exchange", "Trips", "Basketball", "Literature"],
     required: true,
     
   },
@@ -50,6 +50,6 @@ isAdmin:{
 }
 });
 
-const Person = model("Person", personSchema);
+const Person = model("Person", personSchema, "persons");
 
 module.exports = Person;
