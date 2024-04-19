@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Meetup = require('../models/Meetup.model')
 const mongoose = require("mongoose");
-
+const fileUploader = require("../config/cloudinary.config")
   
   router.get("/meetups", (req, res) =>{
     Meetup.find()
