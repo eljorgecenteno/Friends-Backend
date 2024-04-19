@@ -23,7 +23,7 @@ const personSchema = new Schema({
     required: true,
     
   },
-  description {
+  description: {
     type: String,
     minLength: 25,
     maxLength: 100,
