@@ -2,8 +2,8 @@
     "_id": {
       "$oid": "661fed84cacfed404bc7ed54"
     },
-    "name": "First event",
-    "profile_image_url": "https://www.shutterstock.com/image-vector/upcoming-events-isolated-on-white-260nw-1538520572.jpg",
+    "name": "Chess tournament",
+    "profile_image_url": "https://i.insider.com/566465cdc28144b1018b7bb1?width=709&format=jpeg",
     "interest": "Chess",
     "date": {
       "$y": 2024,
@@ -19,9 +19,9 @@
     "_id": {
       "$oid": "66200236cacfed404bc7ed89"
     },
-    "name": "First event",
-    "profile_image_url": "https://www.shutterstock.com/image-vector/upcoming-events-isolated-on-white-260nw-1538520572.jpg",
-    "interest": "Chess",
+    "name": "Thriller Movie Night",
+    "profile_image_url": "https://images.vimooz.com/wp-content/uploads/2017/08/18154725/against-the-night-movie-poster.jpg",
+    "interest": "Movie Night",
     "date": {
       "$y": 2024,
       "$m": 1,
@@ -29,16 +29,16 @@
     },
     "opinions": [],
     "persons": [],
-    "city": "London",
+    "city": "Athens",
     "__v": 0
   },
   {
     "_id": {
       "$oid": "66200237cacfed404bc7ed8b"
     },
-    "name": "First event",
-    "profile_image_url": "https://www.shutterstock.com/image-vector/upcoming-events-isolated-on-white-260nw-1538520572.jpg",
-    "interest": "Chess",
+    "name": "Poker tournament",
+    "profile_image_url": "https://pnimg.net/w/articles/0/553/69c92cd19e.jpg",
+    "interest": "Poker",
     "date": {
       "$y": 2024,
       "$m": 1,
@@ -46,16 +46,16 @@
     },
     "opinions": [],
     "persons": [],
-    "city": "London",
+    "city": "Madrid",
     "__v": 0
   },
   {
     "_id": {
       "$oid": "66200238cacfed404bc7ed8d"
     },
-    "name": "First event",
-    "profile_image_url": "https://www.shutterstock.com/image-vector/upcoming-events-isolated-on-white-260nw-1538520572.jpg",
-    "interest": "Chess",
+    "name": "Football match Real Madrid",
+    "profile_image_url": "https://imgresizer.eurosport.com/unsafe/1200x0/filters:format(jpeg)/origin-imgresizer.eurosport.com/2023/12/21/3849128-78215488-2560-1440.jpg",
+    "interest": "Football",
     "date": {
       "$y": 2024,
       "$m": 1,
@@ -70,9 +70,9 @@
     "_id": {
       "$oid": "66200238cacfed404bc7ed8f"
     },
-    "name": "First event",
-    "profile_image_url": "https://www.shutterstock.com/image-vector/upcoming-events-isolated-on-white-260nw-1538520572.jpg",
-    "interest": "Chess",
+    "name": "Theater Phantom of the Opera",
+    "profile_image_url": "https://imaging.broadway.com/images/custom/w1200/114596-27.jpg",
+    "interest": "Theater",
     "date": {
       "$y": 2024,
       "$m": 1,
@@ -87,9 +87,9 @@
     "_id": {
       "$oid": "66200239cacfed404bc7ed91"
     },
-    "name": "First event",
-    "profile_image_url": "https://www.shutterstock.com/image-vector/upcoming-events-isolated-on-white-260nw-1538520572.jpg",
-    "interest": "Chess",
+    "name": "Dinner at Restaurant",
+    "profile_image_url": "https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/eating-at-restaurant.jpg?quality=82&strip=1",
+    "interest": "Restaurants",
     "date": {
       "$y": 2024,
       "$m": 1,
@@ -97,15 +97,15 @@
     },
     "opinions": [],
     "persons": [],
-    "city": "London",
+    "city": "Paris",
     "__v": 0
   },
   {
     "_id": {
       "$oid": "6620027dcacfed404bc7ed95"
     },
-    "name": "hola este es un ",
-    "profile_image_url": "https://www.shutterstock.com/image-vector/upcoming-events-isolated-on-white-260nw-1538520572.jpg",
+    "name": "Poker at home",
+    "profile_image_url": "https://www.cardschat.com/wp-content/uploads/2021/04/poker-home-games-1.jpeg",
     "interest": "Poker",
     "date": {
       "$y": 2024,
@@ -121,9 +121,9 @@
     "_id": {
       "$oid": "6620027fcacfed404bc7ed97"
     },
-    "name": "hola este es un ",
-    "profile_image_url": "https://www.shutterstock.com/image-vector/upcoming-events-isolated-on-white-260nw-1538520572.jpg",
-    "interest": "Poker",
+    "name": "Party at house",
+    "profile_image_url": "https://guidelive.imgix.net/1500241209-HPT-DAY-5-9.jpg",
+    "interest": "Party",
     "date": {
       "$y": 2024,
       "$m": 1,
@@ -138,9 +138,9 @@
     "_id": {
       "$oid": "662002b0cacfed404bc7ed9a"
     },
-    "name": "hola este es un ",
-    "profile_image_url": "https://elolivar.es/olivar-content/uploads/2023/09/como-organizar-una-fiesta.jpg",
-    "interest": "Party",
+    "name": "Hiking mountain Parnitha",
+    "profile_image_url": "https://koa.com/blog/images/group-of-friends-taking-a-hike.jpg?preset=heroimagecropped",
+    "interest": "Hiking",
     "date": {
       "$y": 2024,
       "$m": 1,
@@ -148,16 +148,16 @@
     },
     "opinions": [],
     "persons": [],
-    "city": "Berlin",
+    "city": "Athens",
     "__v": 0
   },
   {
     "_id": {
       "$oid": "662002b1cacfed404bc7ed9c"
     },
-    "name": "hola este es un ",
-    "profile_image_url": "https://elolivar.es/olivar-content/uploads/2023/09/como-organizar-una-fiesta.jpg",
-    "interest": "Party",
+    "name": "Language Exchange at a bar",
+    "profile_image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8ifjD93eaHrCzutEZJw2AmtynKzueW0zl8LR5mjYPxw&s",
+    "interest": "Language Exchange",
     "date": {
       "$y": 2024,
       "$m": 1,
@@ -173,7 +173,7 @@
       "$oid": "662002c2cacfed404bc7ed9e"
     },
     "name": "Party in my house",
-    "profile_image_url": "https://elolivar.es/olivar-content/uploads/2023/09/como-organizar-una-fiesta.jpg",
+    "profile_image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF4y6oLhdjiDgmcFYC9Td-JP-5M-3wEwpl9JrjH2F99Q&s",
     "interest": "Party",
     "date": {
       "$y": 2024,
@@ -189,9 +189,9 @@
     "_id": {
       "$oid": "662002c3cacfed404bc7eda0"
     },
-    "name": "Party in my house",
-    "profile_image_url": "https://elolivar.es/olivar-content/uploads/2023/09/como-organizar-una-fiesta.jpg",
-    "interest": "Party",
+    "name": "Literature lessons",
+    "profile_image_url": "https://study.com/cimages/videopreview/screen_shot_2013-09-11_at_11.39.31_pm_110184.jpg",
+    "interest": "Literature",
     "date": {
       "$y": 2024,
       "$m": 1,
@@ -199,7 +199,7 @@
     },
     "opinions": [],
     "persons": [],
-    "city": "Madrid",
+    "city": "Berlin",
     "__v": 0
   },
   {

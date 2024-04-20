@@ -3,14 +3,17 @@ const router = express.Router();
 const mongoose = require("mongoose");
 
 const Opinion = require("../models/Opinion.model");
+const Meetup = require("../models/Meetup.model");
 
 //  POST /api/tasks  -  Creates a new opinion
 router.post("/opinions", (req, res, next) => {
-  const { description, date, personId, eventId } = req.body;
+  const { description, date, person, event } = req.body;
 
-  Opinion.create({ description, date, person: personId, event: eventId })
-  .populate(person)
-  .populate(event)
+  let createdOpinionId;
+  Opinion.create({ description, date, person, event })
+    .then((createdOpinion) => {createdOpinionId = createdOpinion._id;
+       return Meetup.findByIdAndUpdate(event, {$addToSet: {opinions: createdOpinionId}})})
+    .then(() => Opinion.findById(createdOpinionId).populate("person").populate("event"))
     .then((response) => res.json(response))
     .catch((err) => res.json(err));
 });
@@ -18,7 +21,7 @@ router.post("/opinions", (req, res, next) => {
 router.get("/opinions", (req, res, next) => {
   Opinion.find()
     .populate("person")
-    .populate('event')
+    .populate("event")
     .then((allOpinions) => res.json(allOpinions))
     .catch((err) => res.json(err));
 });
@@ -33,8 +36,8 @@ router.get("/opinions/:opinionId", (req, res, next) => {
   }
 
   Opinion.findById(opinionId)
-    .populate('person')
-    .populate('event')
+    .populate("person")
+    .populate("event")
     .then((opinion) => res.json(opinion))
     .catch((error) => res.json(error));
 });
