@@ -5,15 +5,16 @@ const opinionSchema = new Schema({
     type: String,
     minLength: 10,
     maxLength: 200,
+    required: true
   },
   date: {
     type: Date,
-    require: true,
+    required: true,
   },
   person: { type: Schema.Types.ObjectId, ref: "Person" },
-  event: { type: Schema.Types.ObjectId, ref: "Event" }
+  event: { type: Schema.Types.ObjectId, ref: "Meetup" }
 });
 
-const Opinion = model("Event", opinionSchema);
+const Opinion = model("Opinion", opinionSchema);
 
 module.exports = Opinion;
