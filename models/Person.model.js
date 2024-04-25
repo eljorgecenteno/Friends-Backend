@@ -5,7 +5,7 @@ const personSchema = new Schema({
     type: String,
     required: true,
     minLength: 2,
-    maxLength: 20,
+    maxLength: 30,
   },
   age: {
     type: Number,
@@ -16,24 +16,40 @@ const personSchema = new Schema({
   profile_image_url: {
     type: String,
     default: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
-    required: true,
   },
   interest: {
     type: [String],
-    enum: ['Chess', 'Cinema', 'Poker', 'Theater', 'Party', 'Restaurants', 'Hiking', 'Football', 'Movie Night', 'Running', 'Language exchange', 'Trips', 'Basketball', 'Literature'],
+    enum: ["Chess", "Cinema", "Poker", "Theater", "Party", "Restaurants", "Hiking", "Football", "Movie Night", "Running", "Language Exchange", "Trips", "Basketball", "Literature"],
     required: true,
-}, 
-motto: {
+    
+  },
+  description: {
     type: String,
-    minLength: 5,
-    maxLength: 100
+    minLength: 25,
+    maxLength: 100,
+    required: true, 
+  },
+  events: [{ type: Schema.Types.ObjectId, ref: "Meetup" }],
+  city: {
+    type: String,
+    enum: ["London", "Paris", "Madrid", "Berlin", "Athens"],
+    required: true, 
+  },
+ email:{
+  type: String, 
+  required: true, 
+  unique: true
+ },
+ password: {
+  type: String,
+  required: true,
 },
-city: {
-    type: String,
-    enum: ['London', 'Paris', 'Madrid', 'Berlin', 'Athens' ]}   
-  
+isAdmin:{
+  type:Boolean, 
+  default: false,
+}
 });
 
-const Person = model('Person', personSchema)
+const Person = model("Person", personSchema, "persons");
 
-module.exports = Person
+module.exports = Person;
