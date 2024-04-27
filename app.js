@@ -31,7 +31,7 @@ const opinionRoutes = require('./routes/opinions.routes')
 app.use('/api', opinionRoutes)
 
 
-app.use('/api',require('./routes/εvent.routes.js'))
+app.use('/api',require('./routes/event.routes.js'))
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
