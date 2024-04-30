@@ -20,6 +20,7 @@ router.get("/meetups", (req, res) => {
 router.get("/meetups/:id", (req, res) => {
   Meetup.findById(req.params.id)
     .populate("opinions")
+    .populate("persons")
     .then((Meetup) => {
       res.status(201).json(Meetup);
     })
