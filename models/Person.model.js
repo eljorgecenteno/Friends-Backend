@@ -10,7 +10,7 @@ const personSchema = new Schema({
   age: {
     type: Number,
     required: true,
-    min: 18,
+    min: [18, "user must be older than 18"],
     max: 100,
   },
   profile_image_url: {
