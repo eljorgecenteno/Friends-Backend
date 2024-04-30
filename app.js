@@ -27,7 +27,8 @@ app.use("/auth", authRoutes);
 const personsRoutes = require('./routes/persons.routes')
 app.use('/api', personsRoutes)
 
-const opinionRoutes = require('./routes/opinions.routes')
+const opinionRoutes = require('./routes/opinions.routes');
+const { isAuthenticated } = require("./middleware/jwt.middleware.js");
 app.use('/api', opinionRoutes)
 
 

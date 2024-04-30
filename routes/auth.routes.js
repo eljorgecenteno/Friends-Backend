@@ -27,6 +27,30 @@ router.post("/persons", (req, res, next) => {
     res.status(400).json({ message: "Provide email, password and name" });
     return;
   }
+if (age < 18){
+  res.status(400).json({ message: "User must be older than 18" });
+    return;
+}
+
+if (age > 100){
+  res.status(400).json({ message: "User must be younger than 100" });
+    return;
+}
+
+if (name.length < 2 || name.length > 30){
+  res.status(400).json({ message: "User name must have between 2 and 30 charcters" });
+    return;
+}
+
+if (city === "" ) {
+  res.status(400).json({ message: "Select a city" });
+  return;
+}
+
+if (description.length < 25 || description.length > 100){
+  res.status(400).json({ message: "User name must have between 25 and 100 charcters" });
+    return;
+}
 
   // This regular expression check that the email is of a valid format
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -104,7 +128,7 @@ router.post("/login", (req, res, next) => {
 
         // Create an object that will be set as the token payload
         const payload = { _id, email, name };
-
+console.log(payload)
         // Create a JSON Web Token and sign it
         const authToken = jwt.sign(payload, process.env.TOKEN_SECRET, {
           algorithm: "HS256",
@@ -121,7 +145,7 @@ router.post("/login", (req, res, next) => {
 });
 
 // GET  /auth/verify  -  Used to verify JWT stored on the client
-router.get("/verify", isAuthenticated, (req, res, next) => {
+router.get("/verify", (req, res, next) => {
   // If JWT token is valid the payload gets decoded by the
   // isAuthenticated middleware and is made available on `req.payload`
   console.log(`req.payload`, req.payload);
