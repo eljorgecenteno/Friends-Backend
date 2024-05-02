@@ -7,10 +7,6 @@ const opinionSchema = new Schema({
     maxLength: 200,
     required: true
   },
-  date: {
-    type: Date,
-    required: true,
-  },
   person: { type: Schema.Types.ObjectId, ref: "Person" },
   event: { type: Schema.Types.ObjectId, ref: "Meetup" }
 });

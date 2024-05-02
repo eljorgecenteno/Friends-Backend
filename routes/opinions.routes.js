@@ -6,11 +6,9 @@ const Opinion = require("../models/Opinion.model");
 
 //  POST /api/tasks  -  Creates a new opinion
 router.post("/opinions", (req, res, next) => {
-  const { description, date, personId, eventId } = req.body;
+  const { description, personId, eventId } = req.body;
 
-  Opinion.create({ description, date, person: personId, event: eventId })
-  .populate(person)
-  .populate(event)
+  Opinion.create({ description, person: personId, event: eventId })
     .then((response) => res.json(response))
     .catch((err) => res.json(err));
 });
