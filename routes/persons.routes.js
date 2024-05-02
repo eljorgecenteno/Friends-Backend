@@ -16,7 +16,7 @@ router.post("/persons", (req, res, next) => {
 //  GET /api/projects -  Retrieves all of the persons
 router.get("/persons", (req, res, next) => {
   console.log("persons route");
-  Person.find()
+  Person.find().select('-password')
     .populate("events")
     .then((allPersons) => res.status(200).json(allPersons))
     .catch((err) => res.json(err));
@@ -46,7 +46,7 @@ router.put("/persons/:personId", (req, res, next) => {
       return;
     }
   
-    Person.findByIdAndUpdate(personId, req.body, { new: true })
+    Person.findByIdAndUpdate(personId, {...req.body, $addToSet: {events: req.body.events}}, { new: true })
       .then((updatedPerson) => res.json(updatedPerson))
       .catch((error) => res.json(error));
   });  
