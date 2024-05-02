@@ -7,13 +7,10 @@ const Meetup = require("../models/Meetup.model");
 
 //  POST /api/tasks  -  Creates a new opinion
 router.post("/opinions", (req, res, next) => {
-  const { description, date, person, event } = req.body;
+  const { description, person, event } = req.body;
 
-  let createdOpinionId;
-  Opinion.create({ description, date, person, event })
-    .then((createdOpinion) => {createdOpinionId = createdOpinion._id;
-       return Meetup.findByIdAndUpdate(event, {$addToSet: {opinions: createdOpinionId}})})
-    .then(() => Opinion.findById(createdOpinionId).populate("person").populate("event"))
+  Opinion.create({ description, person, event })
+    .then((response) => Opinion.findById(response._id).populate("person").populate("event"))
     .then((response) => res.json(response))
     .catch((err) => res.json(err));
 });

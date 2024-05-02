@@ -5,13 +5,7 @@ const Person = require("../models/Person.model");
 const fileUploader = require("../config/cloudinary.config");
 
 //  POST /api/projects  -  Creates a new person, and when creating has no events attended yet
-router.post("/persons", (req, res, next) => {
-  const { name, age, profile_image_url, interest, description,password, city, email } = req.body;
 
-  Person.create({ name, age, profile_image_url, interest, description, city, email,password, events: [] })
-    .then((response) => res.status(200).json(response))
-    .catch((err) => res.json(err));
-});
 
 //  GET /api/projects -  Retrieves all of the persons
 router.get("/persons", (req, res, next) => {
