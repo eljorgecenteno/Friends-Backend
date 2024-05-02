@@ -29,7 +29,7 @@ const personSchema = new Schema({
     maxLength: 100,
     required: true, 
   },
-  events: [{ type: Schema.Types.ObjectId, ref: "Meetup" }],
+  w: [{ type: Schema.Types.ObjectId, ref: "Meetup" }],
   city: {
     type: String,
     enum: ["London", "Paris", "Madrid", "Berlin", "Athens"],
