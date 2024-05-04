@@ -29,10 +29,11 @@ router.get("/meetups/:id", (req, res) => {
     });
 });
 
+
 router.post("/meetups", (req, res) => {
   Meetup.create({
     name: req.body.name,
-    profile_image_url: req.body.profile_image_url,
+    profile_image_url: req.body.profile_image_url === "" ? undefined :req.body.profile_image_url,
     interest: req.body.interest,
     description: req.body.description,
     date: req.body.date,
